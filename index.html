@@ -7,7 +7,47 @@
     <title>AIonNote_bp</title>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <!-- <script src="{{ url_for('static', filename='mermaid.min.js') }}"></script> -->
-    <script>mermaid.initialize({startOnLoad: true});</script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* ul {
+            list-style-type: none;
+            padding: 0;
+        } */
+        li {
+            margin-bottom: 10px;
+        }
+
+        .mermaid {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* For desktop: */
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            /* This will center the content if the screen size is larger than the max-width */
+        }
+
+        /* For mobile: */
+        @media only screen and (max-width: 600px) {
+            body {
+                max-width: 95%;
+            }
+        }
+    </style>
+
+    <!-- Your HTML goes here -->
 </head>
 
 <body>
@@ -104,19 +144,13 @@
         </li>
 
     </ul>
-    <h1>竞品：从GPT到笔记</h1>
+    <h2>竞品：从GPT到笔记</h2>
     <div class="mermaid">flowchart TD
-A[ChatGPT] --&gt; B[NotebookLM]
-B --&gt; C[?]
-C --&gt; D[Notion with AI]
-D --&gt; E[Obsidian]
+        A[ChatGPT] --&gt; B[NotebookLM]
+        B --&gt; C[?]
+        C --&gt; D[Notion with AI]
+        D --&gt; E[Obsidian]
     </div>
-    <pre><code class='language-mermaid' lang='mermaid'>flowchart TD
-A[ChatGPT] --&gt; B[NotebookLM]
-B --&gt; C[?]
-C --&gt; D[Notion with AI]
-D --&gt; E[Obsidian]
-</code></pre>
     <ul>
         <li>
             <p>最上端是完全的chatbot，最下端是完全的笔记软件。</p>
@@ -133,9 +167,11 @@ D --&gt; E[Obsidian]
         </li>
 
     </ul>
-    <h1>联系我？</h1>
+    <h2>联系我？</h2>
     <p>寻找投资人与技术合伙人
         朱天路 13718801402</p>
+    <hr />
+    <p>&nbsp;</p>
 </body>
 
 </html>
