@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<video id="myVideo" controls>
+    <source src="movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<button onclick="makeFullScreen()">Full Screen</button>
+
+<script>
+function makeFullScreen() {
+    var videoElement = document.getElementById("myVideo");
+    if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+    } else if (videoElement.mozRequestFullScreen) { // Firefox
+        videoElement.mozRequestFullScreen();
+    } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        videoElement.webkitRequestFullscreen();
+    } else if (videoElement.msRequestFullscreen) { // IE/Edge
+        videoElement.msRequestFullscreen();
+    }
+}
+</script>
+
+</body>
+</html>
