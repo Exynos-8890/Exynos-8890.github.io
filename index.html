@@ -1,8 +1,141 @@
-<p>Hello 大家好</p>
-<p>我是霸都丶傲天，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!doctype html>
+<html>
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com">我的博客(已经不更细了,现在在知乎写文章)</a> </li>
-</ul>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <title>AIonNote_bp</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <!-- <script src="{{ url_for('static', filename='mermaid.min.js') }}"></script> -->
+    <script>mermaid.initialize({startOnLoad: true});</script>
+</head>
+
+<body>
+    <h1>AI on Note 极速省流版BP</h1>
+    <h2>一句话概括产品</h2>
+    <p>我正在做的是一个<strong>用AI深度改造的obsidian</strong></p>
+    <ul>
+        <li>基于数据结构创新的</li>
+        <li>强化AI agent与人协作的</li>
+        <li>图文内容创作与管理软件</li>
+
+    </ul>
+    <h2>一个场景解释需求</h2>
+    <ul>
+        <li>
+            <p>现在我们要完成一个任务：给领导写飞盘比赛开幕式的发言稿。</p>
+        </li>
+        <li>
+            <p>为了更方便地用GPT完成任务，我准备了这些文件</p>
+            <ul>
+                <li>活动日程安排</li>
+                <li>活动介绍</li>
+                <li>先前类似发言稿</li>
+
+            </ul>
+        </li>
+        <li>
+            <p>我用下面的 step-by-step 流程进行发言稿的写作：</p>
+            <ul>
+                <li>让GPT读取先前发言稿，整理出发言稿的组成要素，和发言稿的语言特点风格</li>
+                <li>结合发言稿要素、活动介绍和日程安排，让GPT写出发言稿大纲</li>
+                <li>根据大纲和语言风格，让GPT写出完整的发言稿</li>
+
+            </ul>
+        </li>
+
+    </ul>
+    <p>当然，这个过程中我可以进行中间步骤的微调，来达到更好的效果。
+        用一张图来更清晰地阐释流程：</p>
+    <pre><code class='language-mermaid' lang='mermaid'>
+</code></pre>
+    <div class="mermaid">graph TD
+        A[先前发言稿]
+        B[发言稿风格]
+        C[发言稿大纲]
+        D[活动介绍]
+        E[日程安排]
+        F[完整发言稿]
+        G[发言稿要素]
+        D --&gt; C
+        E --&gt; C
+        G --&gt; C
+        A --&gt; B
+        A --&gt; G
+        C --&gt; F
+        B --&gt; F
+    </div>
+    <h2>为什么需要创新，怎么创新</h2>
+    <ul>
+        <li>
+            <p>我发现</p>
+            <ul>
+                <li>ChatGPT聊天式的线性逻辑其实不能适应这个有点复杂的流程</li>
+                <li>在step by step下，AI输出的内容就是下一个输入</li>
+                <li>人工进行内容微调很麻烦，需要把输出内容复制出来，修改好之后粘贴回去</li>
+
+            </ul>
+        </li>
+        <li>
+            <p>我们可以</p>
+            <ul>
+                <li>做一个笔记软件来实现这个流程</li>
+                <li>把每一步的输出的内容存为文件，方便修改和作为输入内容</li>
+                <li>在软件中自动生成图型结构，prompt自然成为链接描述</li>
+
+            </ul>
+        </li>
+        <li>
+            <p>我们的用户应该是</p>
+            <ul>
+                <li>需要用AI进行高质量、可精细化控制的写作辅助</li>
+
+            </ul>
+        </li>
+        <li>
+            <p>我们产品可以</p>
+            <ul>
+                <li>引导用户step-by-step使用AI</li>
+                <li>提升AI生成质量：GoT 相关论文支持</li>
+                <li>方便进行每一步的修改与调整：每一步AI产生10%的误差，是方便修正的。多次之后累积到30%+的误差就难以修正了。</li>
+                <li>用户对写作流程有更清晰的认识</li>
+
+            </ul>
+        </li>
+
+    </ul>
+    <h1>竞品：从GPT到笔记</h1>
+    <div class="mermaid">flowchart TD
+A[ChatGPT] --&gt; B[NotebookLM]
+B --&gt; C[?]
+C --&gt; D[Notion with AI]
+D --&gt; E[Obsidian]
+    </div>
+    <pre><code class='language-mermaid' lang='mermaid'>flowchart TD
+A[ChatGPT] --&gt; B[NotebookLM]
+B --&gt; C[?]
+C --&gt; D[Notion with AI]
+D --&gt; E[Obsidian]
+</code></pre>
+    <ul>
+        <li>
+            <p>最上端是完全的chatbot，最下端是完全的笔记软件。</p>
+            <ul>
+                <li>ChatGPT采用对话交互形式，使用最灵活。</li>
+                <li>NotebookLM是Google的新产品，可以把LLM输出的内容一键保存成笔记。是在Chatbot的基础上向笔记靠拢。</li>
+                <li>而Obsidian是完全的笔记，结构化管理文字。</li>
+                <li>Notion with AI 在笔记软件的基础上增加了AI写作和搜索。是在笔记软件的基础上向GPT靠拢</li>
+
+            </ul>
+        </li>
+        <li>
+            <p>我们要在生态位的最中间，更好地结合Chatbot的技术与笔记软件结构化管理的能力。</p>
+        </li>
+
+    </ul>
+    <h1>联系我？</h1>
+    <p>寻找投资人与技术合伙人
+        朱天路 13718801402</p>
+</body>
+
+</html>
