@@ -1,28 +1,74 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <style>
+        /* @media screen and (max-width: 600px) {
+            #myVideo {
+                width: 100%;
+            }
+        } */
+
+        .video-player {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .video-player .pause-btn {
+            width: 100px;
+            /* 设置按钮宽度 */
+            height: 100px;
+            /* 设置按钮高度 */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* 设置背景颜色和透明度 */
+            border-radius: 50%;
+            /* 设置圆角边框 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-player .pause-btn::before {
+            content: "";
+            /* 添加一个空的伪元素 */
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 25px 0 25px 25px;
+            /* 设置三角形的大小和方向 */
+            border-color: transparent transparent transparent #333;
+            /* 设置三角形的颜色 */
+        }
+    </style>
+</head>
+
 <body>
 
-<video id="myVideo" controls>
-    <source src="movie.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+    <video id="myVideo" class="video-player" width="320" height="240" controls>
+        <source src="movie.mp4" type="video/mp4">
+        <div class="pause-btn"><!--添加div元素作为暂停按钮的容器--></div>
+        Your browser does not support the video tag.
+    </video>
+    <p></p>
 
-<button onclick="makeFullScreen()">Full Screen</button>
+    <button onclick="makeFullScreen()">Full Screen</button>
 
-<script>
-function makeFullScreen() {
-    var videoElement = document.getElementById("myVideo");
-    if (videoElement.requestFullscreen) {
-        videoElement.requestFullscreen();
-    } else if (videoElement.mozRequestFullScreen) { // Firefox
-        videoElement.mozRequestFullScreen();
-    } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
-        videoElement.webkitRequestFullscreen();
-    } else if (videoElement.msRequestFullscreen) { // IE/Edge
-        videoElement.msRequestFullscreen();
-    }
-}
-</script>
+    <script>
+        function makeFullScreen() {
+            var videoElement = document.getElementById("myVideo");
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+            } else if (videoElement.mozRequestFullScreen) { // Firefox
+                videoElement.mozRequestFullScreen();
+            } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                videoElement.webkitRequestFullscreen();
+            } else if (videoElement.msRequestFullscreen) { // IE/Edge
+                videoElement.msRequestFullscreen();
+            }
+        }
+    </script>
 
 </body>
+
 </html>
